@@ -1,0 +1,11 @@
+@import '../../../color-kits/bartholomew-realty';
+// START ANY CUSTOM VARIABLES
+$btn-default-bg           : lighten($brand-black,10%) !default;
+$input-bg                 : lighten($brand-black,10%) !default;
+//
+$section-bg               : $brand-black !default;
+$navbar-default-bg        : $brand-black !default;
+$navbar-default-link-color: $brand-white !default;
+// END ANY CUSTOM VARIABLES
+@import '../global/dark-vars';
+@import '../../template';

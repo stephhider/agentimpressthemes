@@ -1,0 +1,161 @@
+// Default navbar
+$section-root: '.navbar-default'; // @at-root html.logged_in #{$section-root} {}
+
+#{$section-root} {
+    background-color: $navbar-default-bg;
+    border          : none;
+    font-family     : $navbar-font;
+    font-weight     : $navbar-font-weight;
+    border-radius   : 0;
+    z-index         : 1030;
+    @if $fixed-header==true {
+        position: fixed;
+        top     : 0;
+        right   : 0;
+        left    : 0;
+        @at-root html.logged_in #{$section-root} {
+            top: $admin-bar-height;
+        }
+    }
+    margin-bottom   : 0;
+
+    .logos-head-shots {
+        margin-bottom: 0;
+        position     : relative;
+
+        li.navbar-head-shot {
+            width     : $head-shots-width;
+            text-align: center;
+
+            .user-headshot-img {
+                position     : absolute;
+                top          : 0;
+                left         : 0;
+                width        : $head-shots-width;
+                height       : $head-shots-width;
+                margin       : 0;
+                border-radius: $head-shots-radius;
+                @include box-shadow($box-shadow-blurry);
+            }
+            @media (max-width: $screen-sm) {
+                display: none;
+            }
+        }
+
+        li.navbar-logo {
+            img {
+                height: ($navbar-height - $navbar-padding-vertical);
+                margin: ($navbar-padding-vertical / 2 ) 0px;
+            }
+        }
+    }
+    @include box-shadow($box-shadow-blurry);
+
+    .company-name a {
+        color      : $navbar-default-brand-color;
+        padding    : 7.5px 0;
+        display    : inline-block;
+        font-size  : 25px;
+        font-weight: 500;
+        &:focus,
+        &:hover {
+            color           : $navbar-default-brand-hover-color;
+            background-color: $navbar-default-brand-hover-bg;
+        }
+        @media (max-width: $screen-md) {
+            max-height : 58px;
+            margin-left: 15px;
+        }
+    }
+
+    .navbar-nav {
+        li {
+            a {
+                color      : $navbar-default-link-color;
+                font-family: $navbar-default-font;
+                font-size  : $navbar-default-font-size;
+                font-weight: $navbar-default-font-weight;
+            }
+
+            &.open {
+                a {
+                    &,
+                    &:focus,
+                    &:hover {
+                        background-color: transparent;
+                        color           : $navbar-default-link-active-color;
+                    }
+                }
+            }
+
+            .dropdown-menu {
+                border    : none;
+                background: $navbar-default-bg;
+
+                li {
+                    text-align: right;
+                    a {
+                        &:hover {
+                            background-color: transparent;
+                        }
+                    }
+
+                }
+
+            }
+        }
+    }
+
+    .navbar-text {
+        color: $navbar-default-color;
+    }
+
+    .navbar-toggle {
+        position    : absolute;
+        z-index     : 100;
+        margin      : 0;
+        right       : 5px;
+        top         : 5px;
+        border      : none;
+        font-size   : 30px;
+        color       : $navbar-default-color;
+        border-color: $navbar-default-toggle-border-color;
+        // background-color: $navbar-default-toggle-bg;
+        &:focus,
+        &:hover {
+            background-color: $navbar-default-toggle-hover-bg;
+        }
+        // @media (max-width: $screen-lg) {
+        //     margin: 12px 0;
+        // }
+        // @media (max-width: $screen-sm) {
+        //     margin: 12px 15px 12px 0;
+        // }
+        //
+        // .icon-bar {
+        //     background-color: $navbar-default-toggle-icon-bar-bg;
+        // }
+    }
+    .lead-items {
+        li {
+            a {
+                .badge {
+                    display         : inline-block;
+                    min-width       : 5px;
+                    padding         : 5px;
+                    font-size       : 95%;
+                    font-weight     : bold;
+                    color           : $brand-main;
+                    line-height     : 1;
+                    vertical-align  : middle;
+                    white-space     : nowrap;
+                    text-align      : center;
+                    background-color: darken($brand-invert,10%);
+                    border-radius   : 0;
+                    float           : left;
+                    margin-left     : -20px;
+                }
+            }
+        }
+    }
+}

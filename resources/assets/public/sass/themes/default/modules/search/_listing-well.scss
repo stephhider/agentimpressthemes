@@ -1,0 +1,264 @@
+$listing-well-padding-base: 15px !default;
+.listing-well {
+    background-color: darken($component-bg, 5%);
+    width           : 100%;
+    position        : relative;
+    margin-bottom   : $line-height-computed;
+    border-radius   : $border-radius-base;
+    @include box-shadow($component-box-shadow);
+    .left-labels {
+        position: absolute;
+        z-index : 30;
+        top     : $listing-well-padding-base;
+        left    : 0;
+        right   : 0;
+        top     : 0;
+        li {
+            margin-bottom: 2.5px;
+            span.label {
+                padding-left             : ($listing-well-padding-base * 2);
+                border-top-left-radius   : 0;
+                border-bottom-left-radius: 0;
+                background-color         : $brand-dark;
+
+                &.status {
+                    background-color: $brand-primary;
+                }
+            }
+            &.dom {
+                span.label {
+                    background-color: $brand-yellow;
+                }
+            }
+        }
+    }
+    .listing-img-container {
+        border-radius: $border-radius-base $border-radius-base 0 0;
+        padding      : 0;
+        margin       : 0;
+        img {
+            width        : 100%;
+            border-radius: $border-radius-base $border-radius-base 0 0;
+            @include transition($transition-opacity);
+
+            &[lazy=loading] {
+                opacity: 0;
+            }
+            &[lazy=error] {
+                /*your style here*/
+            }
+            &[lazy=loaded] {
+                opacity: 1;
+            }
+
+        }
+
+    }
+    .favorite-btn {
+        a {
+            position     : absolute;
+            z-index      : 50;
+            top          : 10px;
+            right        : 10px;
+            background   : $brand-red;
+            background   : rgba($brand-red,.75);
+            width        : 40px;
+            height       : 40px;
+            text-align   : center;
+            line-height  : 1;
+            font-size    : 20px;
+            padding      : 10px;
+            color        : $brand-white;
+            border-radius: 100%;
+            &:hover {
+                cursor    : pointer;
+                background: $brand-red;
+            }
+        }
+    }
+    ul.details {
+        margin: 0;
+        li.title {
+            color        : $header-color;
+            white-space  : nowrap;
+            overflow     : hidden;
+            text-overflow: ellipsis;
+        }
+        li.description {
+            // height: 140px;
+            p {
+                white-space  : normal;
+                overflow     : hidden;
+                text-overflow: ellipsis;
+                line-height  : 1.35;
+                font-size    : 15.5px;
+                margin       : 0;
+            }
+            span.disclaimer {
+
+                font-size: 13.5px;
+            }
+        }
+
+    }
+    .view-listing-btn {
+        display      : inline-block;
+        width        : 100%;
+        text-align   : center;
+        padding      : 5px;
+        border-radius: 0 0 $border-radius-base $border-radius-base;
+        @include button-variant($btn-info-color, $btn-info-bg, $btn-info-border);
+
+    }
+    .listing-hover {
+        .listing-content {
+            padding: $listing-well-padding-base;
+            min-height: 222px;
+            // background-color: darken($component-bg, 5%);
+            // color           : $brand-primary;
+            //
+            // .title {
+            //     color: $brand-primary;
+            // }
+            //
+            // .description {
+            //     color        : inherit;
+            //     margin-bottom: 0;
+            // }
+            //
+            // .listing-disclaimer {
+            //     color: inherit;
+            //
+            //     > p {
+            //         margin-bottom: 5px;
+            //     }
+            // }
+            //
+            // .listing-actions {
+            //     margin-bottom: 0;
+            // }
+        }
+    }
+
+    .listing-specs {
+
+        padding   : 0;
+        text-align: center;
+
+        div.baths {
+            // &:before {
+            //     content    : ' ';
+            //     position   : absolute;
+            //     left       : 0;
+            //     border-left: solid 1px $component-border-color;
+            //     top        : 0;
+            //     bottom     : 0;
+            // }
+            // &:after {
+            //     content     : ' ';
+            //     position    : absolute;
+            //     right       : 0;
+            //     border-right: solid 1px $component-border-color;
+            //     top         : 0;
+            //     bottom      : 0;
+            // }
+        }
+        .baths,
+        .beds,
+        .sqft {
+            padding-top   : 10px;
+            padding-bottom: 10px;
+        }
+
+        .disclaimer {
+            padding   : 10px;
+            font-size : 12px;
+
+            @media (min-width : $screen-md-min) {
+                // width: $container-md;
+                font-size : 11px;
+            }
+        }
+    }
+    @at-root html.no-touch {
+        .listing-hover {
+            position: relative;
+            overflow: hidden;
+            .listing-content {
+                position                   : absolute;
+                z-index                    : 30;
+                background                 : $component-bg;
+                background                 : rgba($component-bg, .85);
+                top                        : 0;
+                left                       : 0;
+                right                      : 0;
+                bottom                     : 0;
+                // -webkit-transition-delay: 2s;
+                // -moz-transition-delay   : 2s;
+                // -o-transition-delay     : 2s;
+                // transition-delay        : 2s;
+                // @include transition(transform $transition-speed, $transition-type);
+                -webkit-transition-property: transform;
+                -webkit-transition-duration: $transition-speed;
+                -webkit-transition-delay   : $transition-speed;
+                transition-property        : transform;
+                transition-duration        : $transition-speed;
+                transition-delay           : $transition-speed;
+                @include transform(translate3d(0, 100%, 0));
+
+            }
+            &:hover {
+                .listing-content {
+                    @include transform(translate3d(0, 0, 0));
+                }
+            }
+        }
+
+    }
+    // @at-root html.no-touch .listing-hover {
+    //     position: absolute;
+    //     // overflow: visible;
+    //     // .listing-specs {
+    //     //     background-color: transparent;
+    //     // }
+    //     // .listing-content {
+    //     //     opacity         : 0;
+    //     //     visibility      : hidden;
+    //     //     position        : absolute;
+    //     //     top             : 0;
+    //     //     left            : 0;
+    //     //     right           : 0;
+    //     //     bottom          : 0;
+    //     //     z-index         : 40;
+    //     //     height          : auto;
+    //     //     background-color: transparent;
+    //     //     @include transition($transition-opacity);
+    //     // }
+    //     // &:hover {
+    //     //     .listing-content {
+    //     //         opacity   : 1;
+    //     //         visibility: visible;
+    //     //
+    //     //         .listing-content-well {
+    //     //             border-radius: $border-radius-base;
+    //     //             padding      : $listing-well-padding-base;
+    //     //             background   : lighten($brand-light, 25%);
+    //     //             background   : rgba(lighten($brand-light, 25%), .95);
+    //     //             @include box-shadow($box-shadow-blurry);
+    //     //             position     : absolute;
+    //     //             left         : 0;
+    //     //             top          : 0;
+    //     //             right        : 0;
+    //     //             bottom       : 0;
+    //     //             .bottom {
+    //     //                 margin-bottom: 0;
+    //     //                 position     : absolute;
+    //     //                 left         : $listing-well-padding-base;
+    //     //                 right        : $listing-well-padding-base;
+    //     //                 bottom       : $listing-well-padding-base;
+    //     //             }
+    //     //         }
+    //     //     }
+    //     // }
+    // }
+}

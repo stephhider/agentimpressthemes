@@ -1,0 +1,6 @@
+@import '../../../color-kits/joyce-e-kelly-real-estate'; // START ANY CUSTOM VARIABLES
+$section-bg : lighten($brand-dark, 5%) !default;
+$footer-bg  : darken($section-bg,2%) !default;
+$footer-text: $brand-light !default;
+@import '../global/dark-vars';
+@import '../../template';

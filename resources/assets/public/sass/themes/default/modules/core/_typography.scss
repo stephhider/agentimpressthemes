@@ -1,0 +1,63 @@
+a {
+    color          : $link-color;
+    text-decoration: $link-decoration;
+    &:focus,
+    &:hover {
+        color          : $link-hover-color;
+        text-decoration: $link-hover-decoration;
+    }
+    &:focus {
+        outline       : none;
+        outline-offset: 0;
+    }
+}
+
+h1.section-heading,
+h2.section-heading,
+h3.section-heading,
+h4.section-heading,
+h5.section-heading,
+h6.section-heading {
+    margin       : 0;
+    font-weight  : 700;
+    font-size    : 35px;
+    margin-bottom: 20px;
+}
+
+h1.subsection-heading,
+h2.subsection-heading,
+h3.subsection-heading,
+h4.subsection-heading,
+h5.subsection-heading,
+h6.subsection-heading {
+    margin       : 0;
+    font-weight  : 700;
+    font-size    : 25px;
+    margin-bottom: 20px;
+}
+
+#{$h-tags} {
+    color: $header-color;
+    small {
+        color      : $header-small-color;
+        display    : flex;
+        // font-size: 65%;
+        font-weight: 300;
+        padding-top: 5px;
+    }
+}
+
+.label {
+    border-radius: $border-radius-small;
+
+    &.label-default {
+        background-color: $brand-main;
+        color           : $brand-invert;
+    }
+}
+.well {
+    background-color: $component-bg;
+    border          : 1px solid $component-border-color;
+    border-radius   : 3px;
+    @include box-shadow($component-box-shadow);
+}

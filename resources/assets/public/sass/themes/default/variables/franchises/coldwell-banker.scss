@@ -1,0 +1,5 @@
+@import '../../../color-kits/coldwell-banker';
+// START ANY CUSTOM VARIABLES
+$footer-bg  : $brand-black !default;
+$footer-text: $brand-light !default;
+@import '../../template';

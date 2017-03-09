@@ -1,0 +1,96 @@
+// Social
+
+.btn-social {
+    color: $brand-white;
+
+    &.facebook {
+        @include button-variant($brand-white, $facebook-main, darken($facebook-main,$btn-hover-bg-percent ));
+    }
+
+    &.linkedin {
+        @include button-variant($brand-white, $linkedin-main, darken($linkedin-main,$btn-hover-bg-percent ));
+    }
+
+    &.google {
+        @include button-variant($brand-white, $googleplus-main, darken($googleplus-main,$btn-hover-bg-percent ));
+    }
+
+    &.twitter {
+        @include button-variant($brand-white, $twitter-main, darken($twitter-main,$btn-hover-bg-percent ));
+    }
+}
+
+ul.social-media {
+    li {
+        a {
+            display      : inline-block;
+            line-height  : 1;
+            border-radius: 5px;
+            text-align   : center;
+
+            .fa {
+                opacity: 1;
+                @include transition(all $transition-speed $transition-type);
+
+                &:hover {
+                    opacity: .5;
+                }
+            }
+
+            .fa-facebook-square {
+                color: $facebook-main;
+            }
+
+            .fa-twitter-square {
+                color: $twitter-main;
+            }
+
+            .fa-linkedin-square {
+                color: $linkedin-main;
+            }
+
+            .fa-youtube-square {
+                color: $youtube-main;
+            }
+
+            .fa-instagram {
+                color: $instagram-main;
+            }
+
+            .fa-google-plus-square {
+                color: $googleplus-main;
+            }
+            @at-root footer .social-media li a {
+                .fa {
+                    color: $brand-white;
+                }
+
+                &:hover {
+                    .fa-facebook-square {
+                        color: $facebook-main;
+                    }
+
+                    .fa-twitter-square {
+                        color: $twitter-main;
+                    }
+
+                    .fa-linkedin-square {
+                        color: $linkedin-main;
+                    }
+
+                    .fa-youtube-square {
+                        color: $youtube-main;
+                    }
+
+                    .fa-instagram {
+                        color: $instagram-main;
+                    }
+
+                    .fa-google-plus-square {
+                        color: $googleplus-main;
+                    }
+                }
+            }
+        }
+    }
+}

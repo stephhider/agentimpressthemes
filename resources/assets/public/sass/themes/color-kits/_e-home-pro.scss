@@ -1,0 +1,12 @@
+$brand-primary: #960000;
+$brand-black  : #000000;
+$brand-gray   : #7e7e7e;
+$brand-white  : #f9f9f9;
+$brand-green  : #00B233;
+$brand-blue   : #0971B2;
+$brand-orange : #FF0000;
+$brand-red    : #960000;
+$brand-yellow : #960000;
+$brand-purple : #7F007F;
+$brand-dark   : mix($brand-primary, $brand-black, $weight:50%);
+$brand-light  : mix($brand-primary, $brand-white, $weight:10%);

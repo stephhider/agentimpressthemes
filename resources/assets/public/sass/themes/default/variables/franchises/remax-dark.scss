@@ -1,0 +1,13 @@
+@import '../../../color-kits/remax';
+// START ANY CUSTOM VARIABLES
+$btn-default-bg           : darken($brand-red,10%) !default;
+$input-bg                 : darken($brand-blue,10%) !default;
+//
+$section-bg               : $brand-blue !default;
+// $section-bg-alt           : $brand-red !default;
+
+// $navbar-default-bg        : darken($brand-black ,5%) !default;
+// $navbar-default-link-color: $brand-primary !default;
+// END ANY CUSTOM VARIABLES
+@import '../global/dark-vars';
+@import '../../template';

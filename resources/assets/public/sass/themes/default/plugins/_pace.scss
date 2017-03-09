@@ -1,0 +1,105 @@
+body {
+    .pace-hide {
+        visibility: hidden;
+        opacity: 0;
+        @include transition(opacity $transition-speed $transition-type);
+    }
+    &.pace-done {
+        .pace-hide {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+    // .pace {
+    //     -webkit-pointer-events: none;
+    //     pointer-events: none;
+    //     -webkit-user-select: none;
+    //     -moz-user-select: none;
+    //     user-select: none;
+    //     display: inline-block !important;
+    //     position: fixed;
+    //     z-index: 100000;
+    //     left: 0;
+    //     right: 0;
+    //     top: 0;
+    //     bottom: 0;
+    //     visibility: visible;
+    //     opacity: 1;
+    //     @include transition(all $transition-speed $transition-type);
+    //     @if $theme-shade==light {
+    //         background: $brand-light;
+    //     }
+    //     @else if $theme-shade==dark {
+    //         background: $brand-dark;
+    //     }
+    //     @else {
+    //         background: $brand-white;
+    //     }
+    //     .pace-progress {
+    //         // background: $brand-primary;
+    //         // position: fixed;
+    //         // z-index: 2000;
+    //         // top: 0;
+    //         // right: 0;
+    //         // width: 100%;
+    //         // height: 3px;
+    //         position: fixed;
+    //         z-index: 2000;
+    //         top: 0;
+    //         right: 0;
+    //         height: 5rem;
+    //         width: 100%;
+    //         -webkit-transform: translate3d(0, 0, 0) !important;
+    //         -ms-transform: translate3d(0, 0, 0) !important;
+    //         transform: translate3d(0, 0, 0) !important;
+    //         &:after {
+    //             display: block;
+    //             position: absolute;
+    //             top: 0;
+    //             right: .5rem;
+    //             content: attr(data-progress-text);
+    //             font-family: "Helvetica Neue", sans-serif;
+    //             font-weight: 100;
+    //             font-size: 5rem;
+    //             line-height: 1;
+    //             text-align: right;
+    //             @if $theme-shade==light {
+    //                 color: $brand-dark;
+    //             }
+    //             @else if $theme-shade==dark {
+    //                 color: $brand-light;
+    //             }
+    //             @else {
+    //                 color: $brand-primary;
+    //             }
+    //         }
+    //     }
+    //     .pace-progress-inner {
+    //         // position: fixed;
+    //         // width: 100%;
+    //         // height: 250px;
+    //         // background: red;
+    //         // top: 0;
+    //         // left: 0;
+    //         // right: 0;
+    //         // bottom: 0;
+    //         // z-index: 1000;
+    //     }
+    // }
+    // &.pace-done {
+    //     .pace {
+    //         visibility: hidden;
+    //         opacity: 0;
+    //     }
+    // }
+}
+
+.pace-inactive {
+    display: none;
+}
+
+body.no-pace {
+    .pace {
+        display: none !important;
+    }
+}

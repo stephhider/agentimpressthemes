@@ -1,0 +1,144 @@
+#map-primary-color {
+    background-color: $map-primary-bg;
+}
+
+#map-secondary-color {
+    background-color: $map-primary-alt;
+}
+
+#map-water-color {
+    background-color: $brand-blue;
+}
+
+#map-road-color {
+    background-color: $map-road-color;
+}
+
+#map-text-color {
+    background-color: $map-text-color;
+}
+
+.map-container {
+    min-height      : 500px;
+    background-color: $map-primary-alt;
+
+    .icon-marker {
+        background   : $brand-dark;
+        font-size    : 28px;
+        width        : 40px;
+        height       : 40px;
+        line-height  : 1;
+        border-radius: 100%;
+        padding      : 4px;
+        text-align   : center;
+        @include box-shadow($box-shadow-blurry);
+        color        : $brand-light;
+
+        &.yelp-marker {
+            color     : #d60406;
+            background: #ffffff;
+            // @include animation(font-sizer 1500ms linear infinite);
+        }
+
+        &.listing-marker {
+            color     : $brand-white;
+            background: $brand-orange;
+            @include animation(bouncer-animation 3500ms linear infinite);
+        }
+    }
+
+    .gm-iv-address {
+        display: none !important;
+    }
+    .google-map-window {
+        margin: 25px 10px 25px 25px;
+        color : lighten($brand-black,15%);
+        width : 400px;
+        a {
+            color: $brand-dark;
+        }
+        img.img-responsive {
+            width        : 100%;
+            margin-bottom: 10px;
+        }
+        &.yelp {
+            address {
+                margin: 0;
+
+            }
+
+        }
+        h5 {
+            font-size: 20px;
+            color    : $brand-black;
+            margin   : 0 0 10px;
+            small {
+                color: lighten($brand-black,15%);
+            }
+        }
+
+    }
+    .gm-style {
+        background: tranparent;
+        .gm-style-iw {
+            font-weight: 300;
+            font-size  : 13px;
+            overflow   : hidden;
+        }
+    }
+}
+
+#street-view {
+    .map-section {
+        // background-color: $brand-invert;
+        .container-fluid {
+            padding-left : 0;
+            padding-right: 0;
+
+            .left,
+            .right {
+                padding-left : 0;
+                padding-right: 0;
+            }
+        }
+    }
+
+    #street-panorama-element {
+        background-color: $brand-invert !important;
+
+        div.gm-style {
+            -webkit-filter: blur(0px) grayscale(0);
+            filter: blur(0px) grayscale(0);
+            @include transition(filter 200ms linear);
+        }
+
+        &.no-view {
+            div.gm-style {
+                opacity: .5;
+                -webkit-filter: blur(15px) grayscale(100%);
+                filter: blur(15px) grayscale(100%);
+                zoom   : 200%;
+                left   : -50px;
+                right  : -50px;
+                width  : 150%;
+                height : 150%;
+            }
+            &:after {
+                content    : 'Sorry... Street view is not available here :(';
+                position   : absolute;
+                z-index    : 1000;
+                background : $brand-main;
+                opacity    : 1;
+                padding    : 5px 15px;
+                left       : 0;
+                right      : 0;
+                text-align : center;
+                top        : 50%;
+                font-weight: 300;
+                line-height: 2;
+                height     : 50px;
+                margin-top : -25px;
+            }
+        }
+    }
+}

@@ -1,0 +1,10 @@
+@import '../../../color-kits/berkshire-hathaway'; // START ANY CUSTOM VARIABLES
+
+$btn-default-bg    : darken($brand-dark,10%) !default;
+$input-bg          : darken($brand-dark,10%) !default;
+//
+$footer-bg         : $brand-dark !default;
+$footer-text       : $brand-gray !default;
+// END ANY CUSTOM VARIABLES
+@import '../global/dark-vars';
+@import '../../template';

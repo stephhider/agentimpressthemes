@@ -1,0 +1,12 @@
+@import '../../../color-kits/the-property-center';
+// START ANY CUSTOM VARIABLES
+$btn-primary-color           : $brand-white;
+$btn-info-bg                 : darken($brand-primary, 7.5%);
+$input-color                 : $brand-white;
+$input-bg                    : darken($brand-white, 15%);
+$input-focus-background-color: lighten($input-bg , 10%);
+$input-focus-color           : darken($brand-primary , 10%);
+
+// END ANY CUSTOM VARIABLES
+@import '../global/dark-vars';
+@import '../../template';

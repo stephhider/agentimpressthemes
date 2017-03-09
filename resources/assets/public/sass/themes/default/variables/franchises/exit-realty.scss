@@ -1,0 +1,5 @@
+@import '../../../color-kits/exit-realty';
+// START ANY CUSTOM VARIABLES
+$header-color : mix($brand-gray,$brand-black, 25%);
+// END ANY CUSTOM VARIABLES
+@import '../../template';

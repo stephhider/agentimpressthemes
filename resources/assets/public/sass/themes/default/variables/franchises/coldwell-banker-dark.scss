@@ -1,0 +1,16 @@
+@import '../../../color-kits/coldwell-banker';
+// START ANY CUSTOM VARIABLES
+$btn-default-bg           : darken($brand-gray,30%) !default;
+$input-bg                 : darken($brand-gray,30%) !default;
+//
+$section-bg               : darken($brand-gray ,20%)!default;
+$navbar-default-bg        : darken($brand-gray ,75%) !default;
+$navbar-default-link-color: $brand-white !default;
+
+$footer-bg                : darken($brand-gray ,25%)!default;
+$footer-text              : $brand-white !default;
+$footer-links             : darken($footer-text ,20%) !default;
+
+// END ANY CUSTOM VARIABLES
+@import '../global/dark-vars';
+@import '../../template';

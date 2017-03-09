@@ -1,0 +1,190 @@
+$section-id: '#listing-utility-scores';
+$section-root: 'body.listing '+$section-id;
+@at-root html.no-touch #{$section-root} {}
+
+#{$section-root} {
+    .panel-heading {
+        h4 {
+            margin: 0;
+        }
+    }
+
+    .my-utility-score-content {
+        @function scoreProgress($i) {
+             @if $i <=40{
+                @return $brand-danger;
+            }
+            @else if $i > 40 and $i <=69 {
+                 @return $brand-warning;
+            }
+            @else if $i > 69 {
+                 @return $brand-success;
+            }
+            @else {
+                 @return $brand-primary;
+            }
+        }
+        position: relative;
+
+        .overlay {
+            position   : absolute;
+            line-height: 1;
+            text-align : center;
+            width      : 200px;
+            height     : 200px;
+            padding    : 0;
+            left       : 50%;
+            top        : 50%;
+            margin-left: -100px;
+            margin-top : -100px;
+            z-index    : 1000;
+            ul.list-unstyled {
+                li.cost {
+                    border    : solid 1px $component-border-color;
+                    background: $component-bg;
+                    background: rgba($component-bg,.75);
+                    padding   : 15px;
+                    @include box-shadow($box-shadow);
+                    strong {
+                        font-size  : 16px;
+                        font-weight: 700;
+                    }
+
+                }
+            }
+        }
+
+        .my-utility-score-score {
+            position: relative;
+            @for $x from 1 through 100 {
+                &.my-utility-score-progress-#{$x} {
+                    li.rating {
+                        .animated-number {
+                            color: scoreProgress($x);
+                        }
+                    }
+                }
+            }
+
+            li.rating {
+                span.animated-number {
+                    font-size  : 100px;
+                    font-weight: 700;
+                    text-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
+                }
+
+                span.out-of {
+                    margin-bottom: 10px;
+                    display      : inline-block;
+                    margin-top   : 0;
+                }
+            }
+        }
+
+        .my-utility-score-chart {
+            position: relative;
+            z-index : 5;
+        }
+
+        .chart-place-holder {
+            position: absolute;
+            z-index : 10;
+            top     : 0;
+            left    : 0;
+        }
+
+        span.danger-color {
+            color: $brand-danger;
+        }
+
+        span.warning-color {
+            color: $brand-warning;
+        }
+
+        span.success-color {
+            color: $brand-success;
+        }
+
+        span.primary-color {
+            color: $brand-primary;
+        }
+
+        .panel {
+            position: relative;
+            overflow: hidden;
+            &:before {
+                font-family: 'FontAwesome';
+                content    : '';
+                position   : absolute;
+                font-size  : 450px;
+                color      : $brand-primary;
+                z-index    : 1;
+                opacity    : .15;
+                top        : 0;
+                right      : 0;
+                line-height: 1;
+            }
+
+            &.electric {
+                &:before {
+                    content  : '\f0e7';
+                    right    : -48px;
+                    top      : -70px;
+                    font-size: 500px;
+                    @include transform(rotate(25deg));
+                }
+            }
+
+            &.gas {
+                &:before {
+                    content: '\f06d';
+                    right  : -85px;
+                    top    : -30px;
+                }
+            }
+
+            &.water {
+                &:before {
+                    content: '\f043';
+                    right  : -50px;
+                    top    : -25px;
+                }
+            }
+        }
+
+        ul.list-unstyled {
+            position: relative;
+            z-index : 10;
+
+            li {
+                padding-left: 10px;
+                z-index     : 10;
+
+                &.title {
+                    font-size   : 45px;
+                    font-weight : 700;
+                    padding-left: 0;
+                }
+
+                strong {
+                    font-size  : 25px;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+    @media (max-width: $screen-sm) {
+        .my-utility-costs-content {
+            padding-top: 20px;
+
+            .panel {
+                min-height: auto !important;
+            }
+        }
+    }
+
+    .container {
+        opacity: 0;
+        @include transition(opacity .75s ease-in-out);
+    }
+}

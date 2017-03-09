@@ -1,0 +1,41 @@
+#main-footer{
+	@media (max-width: $screen-sm){
+		text-align: center;
+	}
+	.social-media{
+		padding-top: 6px;
+		font-size: 0;
+		margin-bottom: 0;
+		@media (max-width: $screen-sm){
+			padding-top: 0;
+			margin-bottom: 20px;
+		}
+		i{
+			font-size: 32px;
+		}
+	}
+	.footer-logo{
+		display: inline-block;
+		float: right;
+		position: relative;
+		&:before{
+		    content: "Powered By";
+		    text-align: right;
+		    color: $brand-light;
+		    position: absolute;
+		    right: 0px;
+		    margin-right: 25px;
+		    font-size: 8px;
+		    line-height: 1;
+		}
+		@media (max-width: $screen-sm){
+			margin: 0 auto;
+			float: none;
+		}
+	}
+}
+#copy-footer{
+	p:last-of-type{
+		margin-bottom: 0;
+	}
+}

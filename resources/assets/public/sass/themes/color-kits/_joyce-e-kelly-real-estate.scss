@@ -1,0 +1,12 @@
+$brand-primary: #6b4397 !default;
+$brand-black  : #111111 !default;
+$brand-gray   : #515151 !default;
+$brand-white  : #fafafa !default;
+$brand-green  : #58b19c !default;
+$brand-blue   : #65809e !default;
+$brand-orange : #f59231 !default;
+$brand-red    : #b8506f !default;
+$brand-yellow : #f59331 !default;
+$brand-purple : #6b4397 !default;
+$brand-dark   : mix($brand-primary, $brand-black, $weight : 50%) !default;
+$brand-light  : mix($brand-primary, $brand-white, $weight : 10%) !default;

@@ -1,0 +1,160 @@
+.modal {
+    .close {
+        color      : $text-color;
+        text-shadow: none;
+        opacity    : .5;
+        @include transition($transition-opacity );
+        &:hover {
+            opacity: 1;
+        }
+    }
+    .modal-header {
+        background-color: darken($modal-content-bg ,10%);
+        border-bottom   : 1px solid darken($modal-content-bg ,15%);
+    }
+
+    .modal-content {
+        border-radius: $modal-border-radius;
+    }
+
+    &.top {
+        .modal-dialog {
+            margin-top: 0;
+
+            .modal-content {
+                border-top   : none;
+                border-radius: 0 0 $modal-border-radius $modal-border-radius;
+            }
+        }
+    }
+
+    &.bottom {
+        top   : 0;
+        bottom: 0;
+        height: 100%;
+
+        .modal-dialog {
+            margin-bottom: 0;
+            position     : absolute;
+            bottom       : 0;
+            left         : 0;
+            right        : 0;
+            margin-bottom: 0;
+
+            .modal-content {
+                border-bottom: none;
+                border-radius: $modal-border-radius $modal-border-radius 0 0;
+            }
+        }
+    }
+
+    &.right {
+        .modal-dialog {
+            position: absolute;
+            right   : 0;
+            top     : 0;
+            bottom  : 0;
+            margin  : 0;
+            @media (max-width: $screen-sm) {
+                width  : 85%;
+                z-index: 100;
+            }
+
+            .modal-content {
+                -webkit-box-shadow: -1px 0 30px rgba(0, 0, 0, 0.3);
+                box-shadow        : -1px 0 30px rgba(0, 0, 0, 0.3);
+                border-radius     : 0;
+                border            : none;
+                bottom            : 0;
+                top               : 0;
+                right             : 0;
+                width             : 100%;
+                position          : fixed;
+                overflow-x        : scroll;
+                @media (max-width: $screen-sm) {
+                    border: none;
+                }
+            }
+        }
+    }
+
+    &.left {
+        .modal-dialog {
+            position: absolute;
+            left    : 0;
+            top     : 0;
+            bottom  : 0;
+            margin  : 0;
+            @media (max-width: $screen-sm) {
+                width  : 85%;
+                z-index: 100;
+            }
+
+            .modal-content {
+                -webkit-box-shadow: -1px 0 30px rgba(0, 0, 0, 0.3);
+                box-shadow        : -1px 0 30px rgba(0, 0, 0, 0.3);
+                border-radius     : 0;
+                border            : none;
+                bottom            : 0;
+                top               : 0;
+                left              : 0;
+                width             : 100%;
+                position          : fixed;
+                overflow-x        : scroll;
+                @media (max-width: $screen-sm) {
+                    border: none;
+                }
+            }
+        }
+    }
+
+    &.full-screen {
+        .modal-content {
+            border       : none;
+            border-radius: 0 !important;
+            position     : absolute;
+            left         : 0;
+            right        : 0;
+            top          : 0;
+            bottom       : 0;
+        }
+
+        .modal-dialog {
+            margin: 0;
+            top   : 0;
+            bottom: 0;
+            left  : 0;
+            right : 0;
+            width : 100%;
+            height: 100%;
+        }
+    }
+    &.video {
+        .modal-dialog {
+            width : 75%;
+            margin: 30px auto;
+        }
+    }
+    &:not(.in) {
+        &.bottom {
+            .modal-dialog {
+                -webkit-transform: translate3d(0, 100%, 0);
+                transform        : translate3d(0, 100%, 0);
+            }
+        }
+
+        &.left {
+            .modal-dialog {
+                -webkit-transform: translate3d(-25%, 0, 0);
+                transform        : translate3d(-25%, 0, 0);
+            }
+        }
+
+        &.right {
+            .modal-dialog {
+                -webkit-transform: translate3d(25%, 0, 0);
+                transform        : translate3d(25%, 0, 0);
+            }
+        }
+    }
+}

@@ -1,0 +1,32 @@
+@import '../../../color-kits/weichert';
+// START ANY CUSTOM VARIABLES
+$section-bg               : $brand-white !default;
+$link-color              : $brand-dark !default;
+//
+$footer-bg                : lighten($brand-black,15%) !default;
+$footer-text              : $brand-white !default;
+
+$navbar-default-bg        : $brand-black !default;
+$navbar-default-color     : $brand-white !default;
+$navbar-default-link-color: $navbar-default-color !default;
+// END ANY CUSTOM VARIABLES
+@import '../../template';
+.dropdown-menu {
+    li {
+        a {
+            color: mix($brand-gray,$brand-black);
+            &:hover {
+                color: $brand-black
+            }
+        }
+    }
+    .active {
+        a {
+            background: $brand-gray;
+            color: $brand-white;
+            &:hover {
+                background: $brand-black
+            }
+        }
+    }
+}
