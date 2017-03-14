@@ -10,4 +10,3 @@
 <?php include 'includes/global/footer.php'; ?>
 <?php include 'includes/global/scripts.php'; ?>
 <?php include 'includes/global/foot.php'; ?>
-<?php echo "Hello Next" ?>
