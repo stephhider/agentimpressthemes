@@ -1,8 +1,0 @@
-@import '../../../color-kits/the-property-center'; // START ANY CUSTOM VARIABLES
-$header-color             : $brand-primary;
-$panel-bg                 : darken($brand-gray, 7.5%);
-$panel-default-heading-bg : darken($brand-gray, 20%);
-$btn-info-bg              : $brand-primary;
-$footer-text              : $brand-white; 
-$navbar-default-link-color: $brand-primary; // END ANY CUSTOM VARIABLES
-@import '../../template';
