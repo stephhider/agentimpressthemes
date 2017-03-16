@@ -16,8 +16,8 @@ agentimpress themes
 
 ## Step 4
 
-'gulp scripts'
+`gulp scripts'`
 
 ## Step 5
 
-'gulp watch'
+`gulp watch`
